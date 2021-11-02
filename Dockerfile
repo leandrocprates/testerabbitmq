@@ -1,7 +1,8 @@
 FROM openjdk:17-alpine
 COPY target/testerabbitmq-0.0.1-SNAPSHOT.jar .
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar","./testerabbitmq-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=docker" ,   "./testerabbitmq-0.0.1-SNAPSHOT.jar"]
 
-#docker build -t testerabbitmq .
-#docker-compose -f docker-compose-rabbit.yaml up -d
+#docker build -t testerabbitmq .                            Criar imagem
+#docker network create external-example                     Criar rede entre containers
+#docker-compose -f docker-compose-rabbit.yaml up -d         Subir containers
