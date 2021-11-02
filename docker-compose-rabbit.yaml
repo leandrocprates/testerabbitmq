@@ -1,0 +1,9 @@
+version: '3.1'
+services:
+  testerabbitmq:
+    image: testerabbitmq:latest
+    container_name: testerabbitmq
+    ports:
+      - 8080:8080
+
+#docker-compose -f docker-compose-rabbit.yaml up -d
