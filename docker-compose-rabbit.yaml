@@ -8,8 +8,13 @@ services:
 
 networks:
   default:
-    external:
-      name: external-example
+    driver: bridge
+    name : backend
 
+
+#networks:
+#  default:
+#    external:
+#      name: external-example
 
 #docker-compose -f docker-compose-rabbit.yaml up -d
