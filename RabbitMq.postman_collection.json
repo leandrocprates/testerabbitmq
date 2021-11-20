@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "1c172795-ecc6-4257-907f-a71d4dc07b5c",
+		"name": "RabbitMq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Enviar mensagem RabbitMq com Routingkey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/direct/mq?exchange=direct-exchange&routingkey=admin&mensagem=Mensagem ",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"direct",
+						"mq"
+					],
+					"query": [
+						{
+							"key": "exchange",
+							"value": "direct-exchange"
+						},
+						{
+							"key": "routingkey",
+							"value": "admin"
+						},
+						{
+							"key": "mensagem",
+							"value": "Mensagem "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Envia Mensagem Default MQ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Mensagem ",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/default/mq",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"default",
+						"mq"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
